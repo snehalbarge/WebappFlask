@@ -1,0 +1,21 @@
+version: '3'
+services:
+    web:
+        # restart: always
+        build: .
+        ports:
+            - 5000:5000
+        depends_on:
+            - db3
+    db3:
+        image: postgres:latest
+        #restart: always
+        env_file:
+            env.list            
+        ports:
+            - 3406:3406
+        volumes:
+            - flask_polls_data:/var/lib/postgresql/data
+            
+volumes:
+    flask_polls_data:

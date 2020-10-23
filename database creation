@@ -1,0 +1,3 @@
+flask db init
+flask db migrate #define the operations to be undertaken on our database. 
+flask db upgrade # flask db upgrade command executes the migration and creates our table
